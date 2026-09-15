@@ -1,0 +1,15 @@
+services:
+  papan-db:
+    image: postgres:17
+    container_name: papan-db
+    environment:
+      POSTGRES_DB: papandb
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - papan-data:/var/lib/postgresql/data
+
+volumes:
+  papan-data:
